@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    gtkapps.url = "github:JackMechem/gtkapps";
+    gtkbar.url = "github:JackMechem/gtkbar";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
