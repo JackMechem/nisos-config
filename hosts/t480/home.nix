@@ -5,6 +5,7 @@
   imports = [
     inputs.zen-browser.homeModules.twilight
     ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/tmux.nix
   ];
 
   programs.home-manager.enable = true;

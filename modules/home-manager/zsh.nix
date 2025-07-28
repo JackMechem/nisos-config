@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
     let
   shellAliases = {
     rebuild-nix = "sudo nixos-rebuild switch --flake /home/jack/nixos/#t480";
@@ -26,4 +26,3 @@ in
         inherit shellAliases;
     };
 }
-
