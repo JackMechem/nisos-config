@@ -19,7 +19,8 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [ pkgs.sway-contrib.grimshot ];
+  home.packages =
+    [ pkgs.sway-contrib.grimshot pkgs.waypaper pkgs.hyprpaper pkgs.swaybg ];
 
   programs.zen-browser.enable = true;
 
