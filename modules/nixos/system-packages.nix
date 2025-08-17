@@ -18,5 +18,6 @@
     git
     gcc
     fastfetch
+    brightnessctl
   ];
 }

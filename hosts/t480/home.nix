@@ -6,6 +6,7 @@
     inputs.zen-browser.homeModules.twilight
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/hyprland.nix
   ];
 
   programs.home-manager.enable = true;
