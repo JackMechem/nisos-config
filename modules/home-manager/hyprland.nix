@@ -22,6 +22,7 @@
 
       # Start Shit
       # exec-once = sh /home/jack/.config/waybar/launch-waybar.sh & waypaper --restore
+      exec-once = waypaper --restore
       #exec-once = ags run /home/jack/.config/ags/simple-bar/
       # exec-once = hyprpanel
       exec-once = gtkbar
@@ -166,6 +167,9 @@
 
       # Rice Settings (Developed by me)
       bind = SUPER, grave, exec, rice-settings
+
+      # Bar relaunch
+      bind = $mainMod, B, exec, gtkbar
 
 
       # Multimedia Keys

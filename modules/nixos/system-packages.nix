@@ -19,5 +19,9 @@
     gcc
     fastfetch
     brightnessctl
+    killall
+    unzip
+    python3
+    nodejs
   ];
 }

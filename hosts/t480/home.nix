@@ -7,6 +7,7 @@
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/homepackages.nix
   ];
 
   programs.home-manager.enable = true;
@@ -17,16 +18,19 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages =
-    [ pkgs.sway-contrib.grimshot pkgs.waypaper pkgs.hyprpaper pkgs.swaybg ];
 
   programs.zen-browser.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = { };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
 
   gtk = {
     enable = true;

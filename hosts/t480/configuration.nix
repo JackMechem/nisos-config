@@ -35,12 +35,22 @@
 
   programs.dconf.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
+
+  xdg.portal = {
+        enable = true;
+        wlr.enable = true;
+        extraPortals = with pkgs; [
+            xdg-desktop-portal-gtk
+            xdg-desktop-portal-hyprland
+        ];
+    };
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { "jack" = import ./home.nix; };
   };
 
-  nixpkgs.config.allowUnfree = true;
 
   services.libinput.enable = true;
 
