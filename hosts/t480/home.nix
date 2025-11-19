@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
 
@@ -17,7 +22,6 @@
   home.homeDirectory = "/home/jack";
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
-
 
   programs.zen-browser.enable = true;
 
@@ -63,10 +67,40 @@
       "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
   };
 
+  home.file = {
+    ".config/ghostty/config".text = ''
+      font-size = 15
+      palette = 0=#0d0c0c
+      palette = 1=#c4746e
+      palette = 2=#8a9a7b
+      palette = 3=#c4b28a
+      palette = 4=#8ba4b0
+      palette = 5=#a292a3
+      palette = 6=#8ea4a2
+      palette = 7=#c8c093
+      palette = 8=#a6a69c
+      palette = 9=#e46876
+      palette = 10=#87a987
+      palette = 11=#e6c384
+      palette = 12=#7fb4ca
+      palette = 13=#938aa9
+      palette = 14=#7aa89f
+      palette = 15=#c5c9c5
+
+      background = 181616
+      foreground = c5c9c5
+      cursor-color = c8c093
+      selection-background = 2d4f67
+      selection-foreground = c8c093
+    '';
+  };
+
   home.shellAliases = {
     nixreb = "sudo nixos-rebuild switch --flake /home/jack/nixos/#t480";
   };
 
-  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
 }

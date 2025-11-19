@@ -7,6 +7,7 @@
         swaybg
         lua-language-server
         nil
+        nixfmt-rfc-style
         stylua
 
         lunar-client
