@@ -14,7 +14,6 @@
     tree
     vim # Both vim and neovim just in case
     wget
-    ghostty
     git
     gcc
     fastfetch

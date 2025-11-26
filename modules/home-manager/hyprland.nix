@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
@@ -28,6 +29,9 @@
       exec-once = gtkbar
       exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
+      #env = XDG_CONFIG_HOME,/home/jack/.config
+
+
       # Source a file (multi-file configs)
       # source = ~/.config/hypr/myColors.conf
 
@@ -46,6 +50,11 @@
       # env = XDG_SCREENSHOTS_DIR,/home/jack/Photos/Screenshots
       # env = XCURSOR_THEME,Bibata-Modern-Ice
 
+      device {
+        name = synaptics-tm3276-022
+        enabled = false
+      }
+
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input {
           kb_layout = us
@@ -63,6 +72,8 @@
           accel_profile = flat
 
           sensitivity = 1.0 # -1.0 to 1.0, 0 means no modification.
+
+
       }
 
       general {
@@ -136,11 +147,6 @@
       #     # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
       #     new_is_master = true
       # }
-
-      gestures {
-          # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          workspace_swipe = off
-      }
 
       misc {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more

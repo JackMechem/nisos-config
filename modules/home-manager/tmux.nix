@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.tmux = {
     enable = true;
     baseIndex = 1;
@@ -66,9 +67,8 @@
       set -g status-left-length 50
       set -g status-right-length 140
       set -g status-justify centre # center align window list
-      set -g status-bg "colour8"
-      set -g status-fg "colour7"
+      set -g status-bg "colour11"
+      set -g status-fg "colour0"
     '';
   };
 }
-

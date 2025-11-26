@@ -13,6 +13,7 @@
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/homepackages.nix
+    ../../modules/home-manager/shell-aliases.nix
   ];
 
   programs.home-manager.enable = true;
@@ -40,8 +41,8 @@
     enable = true;
 
     theme = {
-      name = "Graphite-Dark";
-      package = pkgs.graphite-gtk-theme;
+      name = "Kanagawa-B";
+      package = pkgs.kanagawa-gtk-theme;
     };
 
     iconTheme = {
@@ -67,36 +68,48 @@
       "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
   };
 
-  home.file = {
-    ".config/ghostty/config".text = ''
-      font-size = 15
-      palette = 0=#0d0c0c
-      palette = 1=#c4746e
-      palette = 2=#8a9a7b
-      palette = 3=#c4b28a
-      palette = 4=#8ba4b0
-      palette = 5=#a292a3
-      palette = 6=#8ea4a2
-      palette = 7=#c8c093
-      palette = 8=#a6a69c
-      palette = 9=#e46876
-      palette = 10=#87a987
-      palette = 11=#e6c384
-      palette = 12=#7fb4ca
-      palette = 13=#938aa9
-      palette = 14=#7aa89f
-      palette = 15=#c5c9c5
+  programs.ghostty = {
+    enable = true;
 
-      background = 181616
-      foreground = c5c9c5
-      cursor-color = c8c093
-      selection-background = 2d4f67
-      selection-foreground = c8c093
-    '';
-  };
+    # If you're on a channel/flake that has ghostty packaged:
+    # comment this out if you install ghostty some other way
+    package = pkgs.ghostty;
 
-  home.shellAliases = {
-    nixreb = "sudo nixos-rebuild switch --flake /home/jack/nixos/#t480";
+    settings = {
+      # ----- basic look -----
+      "font-family" = "JetBrainsMono Nerd Font";
+      "font-size" = 14;
+
+      "window-padding-x" = 8;
+      "window-padding-y" = 8;
+
+      # ----- your theme -----
+      # repeated keys like `palette` become a list
+      palette = [
+        "0=#181616"
+        "1=#c4746e"
+        "2=#8a9a7b"
+        "3=#c4b28a"
+        "4=#8ba4b0"
+        "5=#a292a3"
+        "6=#8ea4a2"
+        "7=#bcb093"
+        "8=#a6a69c"
+        "9=#e46876"
+        "10=#87a987"
+        "11=#6c8384"
+        "12=#7fb4ca"
+        "13=#938aa9"
+        "14=#7aa89f"
+        "15=#c5c9c5"
+      ];
+
+      background = "#181616";
+      foreground = "#c5c9c5";
+      "cursor-color" = "#c8c093";
+      "selection-background" = "#2d4f67";
+      "selection-foreground" = "#c8c093";
+    };
   };
 
   home.sessionVariables = {
