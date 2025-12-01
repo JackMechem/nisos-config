@@ -28,6 +28,7 @@
       # exec-once = hyprpanel
       exec-once = gtkbar
       exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+      exec-once=systemctl --user mask xdg-desktop-portal-gnome
 
       #env = XDG_CONFIG_HOME,/home/jack/.config
 

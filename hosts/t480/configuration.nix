@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -20,7 +26,10 @@
   networking.hostName = "t480";
   networking.networkmanager.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   time.timeZone = "America/Los_Angeles";
 
@@ -38,19 +47,21 @@
   nixpkgs.config.allowUnfree = true;
 
   xdg.portal = {
-        enable = true;
-        wlr.enable = true;
-        extraPortals = with pkgs; [
-            xdg-desktop-portal-gtk
-            xdg-desktop-portal-hyprland
-        ];
-    };
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gnome
+    ];
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = { "jack" = import ./home.nix; };
+    users = {
+      "jack" = import ./home.nix;
+    };
   };
-
 
   services.libinput.enable = true;
 
@@ -59,4 +70,3 @@
   system.stateVersion = "25.05";
 
 }
-
