@@ -18,15 +18,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
-    nixosConfigurations.t480 = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/t480/configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    {
+      # use "nixos", or your hostname as the name of the configuration
+      # it's a better practice than "default" shown in the video
+      nixosConfigurations.t480 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/t480/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/desktop/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
-  };
 }
