@@ -13,5 +13,8 @@
 
     lunar-client
     discord
+
+    spotify
+    pavucontrol
   ];
 }

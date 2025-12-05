@@ -11,7 +11,7 @@
     inputs.zen-browser.homeModules.twilight
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/tmux.nix
-    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/hyprland-desktop.nix
     ../../modules/home-manager/homepackages.nix
     ../../modules/home-manager/shell-aliases.nix
   ];

@@ -16,12 +16,13 @@
     ../../modules/nixos/system-packages.nix
     ../../modules/nixos/user-jack.nix
     ../../modules/nixos/sound.nix
+    ../../modules/nixos/print.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
 
   networking.hostName = "jackdesk";
   networking.networkmanager.enable = true;
@@ -32,9 +33,6 @@
   ];
 
   time.timeZone = "America/Los_Angeles";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   services.dbus.enable = true;
 
@@ -67,6 +65,6 @@
 
   services.openssh.enable = true;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
 }
