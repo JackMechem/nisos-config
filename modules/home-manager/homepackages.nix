@@ -16,5 +16,7 @@
 
     spotify
     pavucontrol
+
+    zoom-us
   ];
 }
