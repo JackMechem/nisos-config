@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
 
-  services.printing.enable = true;
+    services.printing.enable = true;
+    services.printing.drivers = [ pkgs.brlaser ];
 
     services.printing.browsing = true;
     services.printing.browsedConf = ''
