@@ -18,5 +18,6 @@
     pavucontrol
 
     zoom-us
+    deno
   ];
 }
